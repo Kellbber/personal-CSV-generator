@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import Router from '../router'
-import './App.css'
+import { BrowserRouter } from "react-router-dom";
+import Router from "../router";
+import "./App.css";
+import { AuthProvider } from "./contexts/Auth/AuthProvider";
 function App() {
-
   return (
-<>
-<BrowserRouter>
-    <Router/>
-</BrowserRouter>
-</>
-  )
+    <>
+      <AuthProvider>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </AuthProvider>
+    </>
+  );
 }
 
-export default App
+export default App;
